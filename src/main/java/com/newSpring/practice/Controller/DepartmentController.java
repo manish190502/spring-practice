@@ -15,8 +15,17 @@ public class DepartmentController {
 
     @PostMapping("/departments")
     public Department saveDepartment(@RequestBody Department department){
+        // Print the values of all fields in the department object
+        System.out.println("Received Department:");
+        System.out.println("Department Name: " + department.getDepartmentName());
+        System.out.println("Department Address: " + department.getDepartmentAddress());
+        System.out.println("Department Code: " + department.getDepartmentCode());
+        System.out.println("Department ID: " + department.getDepartmentId());
+
+        // Proceed with saving the department
         return departmentService.saveDepartment(department);
     }
+
 
     @GetMapping("/getDepartments")
     public List<Department> fetchDepartments(){
